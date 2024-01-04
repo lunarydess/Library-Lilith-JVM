@@ -4,8 +4,7 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
 public final class TypeCaster {
-    TypeCaster() {
-    }
+    TypeCaster() {}
 
     /**
      * @param <T>    the type we want to cast to

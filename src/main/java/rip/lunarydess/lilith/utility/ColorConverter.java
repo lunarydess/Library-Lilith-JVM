@@ -1,36 +1,5 @@
 package rip.lunarydess.lilith.utility;
 
-/*
-public sealed class ColorConverter {
-    public static float[] HsvToRgba(in float hue, in float saturation, in float value) =>
-    HsvaToRgba(hue: hue, saturation: saturation, value: value, alpha: 1.0F);
-
-    public static float[] HsvaToRgba(in float hue, in float saturation, in float value, in float alpha) {
-        int hi = (int) System.Math.Round(value: hue * 6.0F, digits: 0);
-
-        float f = hue * 6.0F - hi;
-
-        float q = value * (1.0F - f * saturation);
-        float p = value * (1.0F - saturation);
-        float t = value * (1.0F - (1.0F - f) * saturation);
-
-        return hi switch {
-            0     => new[] { value, t, p, alpha },
-            1     => new[] { q, value, p, alpha },
-            2     => new[] { p, value, t, alpha },
-            3     => new[] { p, q, value, alpha },
-            4     => new[] { t, p, value, alpha },
-            var _ => new[] { value, p, q, alpha }
-        };
-    }
-
-    public static int HsvToDec(in float hue, in float saturation, in float value) =>
-    HsvaToDec(hue: hue, saturation: saturation, value: value, alpha: 1.0F);
-
-    public static int HsvaToDec(in float hue, in float saturation, in float value, in float alpha) =>
-    RgbaToDec(color: HsvaToRgba(hue: hue, saturation: saturation, value: value, alpha: alpha));
-}
- */
 public final class ColorConverter {
     // @formatter:off
     public static int hsvToDec(
