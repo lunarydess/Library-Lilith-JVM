@@ -11,7 +11,7 @@ public final class TypeCaster {
      * @param object the object we want to cast
      * @return the cast object (if possible)
      */
-    @Contract("null->null;!null->!null")
+    @Contract(value = "null->null;!null->!null", pure = false)
     @SuppressWarnings("unchecked")
     public @Nullable
     static <T> T cast(final @Nullable Object object) {
