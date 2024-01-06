@@ -50,15 +50,14 @@ public class EventManager {
                             this.handlers.getOrDefault(clazz, new EventHandlers.IHandler[0]),
                             handler
                     )).sorted(Comparator.comparingInt(value -> -value.priority()))
-                    .toList()
-                    .toArray(new EventHandlers.IHandler[0])); }
+                    .toArray(EventHandlers.IHandler[]::new)); }
         catch (final Throwable throwable) { onError.accept(throwable); }
     } // @formatter:om
 
     @SuppressWarnings("unchecked")
     public <H extends EventHandlers.IHandler<E>, E extends AbstractEvent>
     void unregister(final Class<E> clazz, final H handler) { // TODO: ... | test this method, too tired rn. >.>
-        var handlers = this.handlers.getOrDefault(clazz, new EventHandlers.IHandler[0]);
+        final var handlers = this.handlers.getOrDefault(clazz, new EventHandlers.IHandler[0]);
         if (handlers.length == 0) {
             this.handlers.remove(clazz);
             return;
