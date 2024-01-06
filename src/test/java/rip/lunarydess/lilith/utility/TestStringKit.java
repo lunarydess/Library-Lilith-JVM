@@ -1,4 +1,4 @@
-﻿package rip.lunarydess.lilith.utility;
+package rip.lunarydess.lilith.utility;
 
 
 import org.junit.jupiter.api.DisplayName;

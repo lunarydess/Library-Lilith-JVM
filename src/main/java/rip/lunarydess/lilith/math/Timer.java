@@ -1,4 +1,4 @@
-﻿package rip.lunarydess.lilith.math;
+package rip.lunarydess.lilith.math;
 
 import java.util.concurrent.TimeUnit;
 

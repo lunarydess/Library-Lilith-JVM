@@ -1,4 +1,4 @@
-﻿package rip.lunarydess.lilith.type;
+package rip.lunarydess.lilith.type;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.TestInstance;
