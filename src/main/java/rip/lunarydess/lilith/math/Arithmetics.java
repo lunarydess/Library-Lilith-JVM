@@ -265,7 +265,7 @@ public final class Arithmetics {
             final byte value,
             final byte minimum,
             final byte maximum
-    ) { return value < minimum ? minimum : value > maximum ? maximum : value; }
+    ) { return value <= minimum ? minimum : value >= maximum ? maximum : value; }
 
     /**
      * @param value   our value we want to clamp.
@@ -277,7 +277,7 @@ public final class Arithmetics {
             final short value,
             final short minimum,
             final short maximum
-    ) { return value < minimum ? minimum : value > maximum ? maximum : value; }
+    ) { return value <= minimum ? minimum : value >= maximum ? maximum : value; }
 
     /**
      * @param value   our value we want to clamp.
@@ -289,7 +289,7 @@ public final class Arithmetics {
             final int value,
             final int minimum,
             final int maximum
-    ) { return value < minimum ? minimum : value > maximum ? maximum : value; }
+    ) { return value <= minimum ? minimum : value >= maximum ? maximum : value; }
 
     /**
      * @param value   our value we want to clamp.
@@ -301,7 +301,7 @@ public final class Arithmetics {
             final long value,
             final long minimum,
             final long maximum
-    ) { return value < minimum ? minimum : value > maximum ? maximum : value; }
+    ) { return value <= minimum ? minimum : value >= maximum ? maximum : value; }
 
     /**
      * @param value   our value we want to clamp.
@@ -313,7 +313,7 @@ public final class Arithmetics {
             final float value,
             final float minimum,
             final float maximum
-    ) { return value < minimum ? minimum : value > maximum ? maximum : value; }
+    ) { return value <= minimum ? minimum : value >= maximum ? maximum : value; }
 
     /**
      * @param value   our value we want to clamp.
@@ -325,6 +325,6 @@ public final class Arithmetics {
             final double value,
             final double minimum,
             final double maximum
-    ) { return value < minimum ? minimum : value > maximum ? maximum : value; }
+    ) { return value <= minimum ? minimum : value >= maximum ? maximum : value; }
     // @formatter:on
 }

@@ -23,7 +23,6 @@ public final class Timer {
     }
 
     public void setTimeIn(final TimeUnit timeUnit, final long time) {
-        if (timeUnit == TimeUnit.NANOSECONDS) this.nanos = time;
-        else this.nanos = TimeUnit.NANOSECONDS.convert(time, timeUnit);
+        this.nanos = timeUnit == TimeUnit.NANOSECONDS ? time : TimeUnit.NANOSECONDS.convert(time, timeUnit); 
     }
 }
