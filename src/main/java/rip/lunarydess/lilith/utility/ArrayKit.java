@@ -468,7 +468,7 @@ public final class ArrayKit {
             final int index
     ) {
         final var result = new boolean[array.length + 1];
-        if (result.length == 0 || index < -1 || index > array.length - 1) return new boolean[0];
+        if (index < -1 || index > array.length - 1) return new boolean[0];
 
         arraycopy(array, 0, result, 0, index + 1);
 
@@ -503,7 +503,7 @@ public final class ArrayKit {
             final int index
     ) {
         final var result = new byte[array.length + 1];
-        if (result.length == 0 || index < -1 || index > array.length - 1) return new byte[0];
+        if (index < -1 || index > array.length - 1) return new byte[0];
 
         arraycopy(array, 0, result, 0, index + 1);
 
@@ -538,7 +538,7 @@ public final class ArrayKit {
             final int index
     ) {
         final var result = new char[array.length + 1];
-        if (result.length == 0 || index < -1 || index > array.length - 1) return new char[0];
+        if (index < -1 || index > array.length - 1) return new char[0];
 
         arraycopy(array, 0, result, 0, index + 1);
 
@@ -573,7 +573,7 @@ public final class ArrayKit {
             final int index
     ) {
         final var result = new short[array.length + 1];
-        if (result.length == 0 || index < -1 || index > array.length - 1) return new short[0];
+        if (index < -1 || index > array.length - 1) return new short[0];
 
         arraycopy(array, 0, result, 0, index + 1);
 
@@ -608,7 +608,7 @@ public final class ArrayKit {
             final int index
     ) {
         final var result = new int[array.length + 1];
-        if (result.length == 0 || index < -1 || index > array.length - 1) return new int[0];
+        if (index < -1 || index > array.length - 1) return new int[0];
 
         arraycopy(array, 0, result, 0, index + 1);
 
@@ -643,7 +643,7 @@ public final class ArrayKit {
             final int index
     ) {
         final var result = new long[array.length + 1];
-        if (result.length == 0 || index < -1 || index > array.length - 1) return new long[0];
+        if (index < -1 || index > array.length - 1) return new long[0];
 
         arraycopy(array, 0, result, 0, index + 1);
 
@@ -678,7 +678,7 @@ public final class ArrayKit {
             final int index
     ) {
         final var result = new float[array.length + 1];
-        if (result.length == 0 || index < -1 || index > array.length - 1) return new float[0];
+        if (index < -1 || index > array.length - 1) return new float[0];
 
         arraycopy(array, 0, result, 0, index + 1);
 
@@ -713,7 +713,7 @@ public final class ArrayKit {
             final int index
     ) {
         final var result = new double[array.length + 1];
-        if (result.length == 0 || index < -1 || index > array.length - 1) return new double[0];
+        if (index < -1 || index > array.length - 1) return new double[0];
 
         arraycopy(array, 0, result, 0, index + 1);
 

@@ -1,5 +1,6 @@
 package rip.lunarydess.lilith.type.value;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import rip.lunarydess.lilith.type.TypeCaster;
 
@@ -60,7 +61,7 @@ public class GenericValue<V> implements IValue {
      * @return the name of the current value.
      */
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return this.name;
     }
 

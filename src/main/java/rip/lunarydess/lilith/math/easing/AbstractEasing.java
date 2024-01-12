@@ -1,4 +1,4 @@
-﻿package rip.lunarydess.lilith.math.easing;
+package rip.lunarydess.lilith.math.easing;
 
 import rip.lunarydess.lilith.math.Timer;
 

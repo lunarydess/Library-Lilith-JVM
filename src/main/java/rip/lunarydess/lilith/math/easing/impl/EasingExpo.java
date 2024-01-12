@@ -1,4 +1,4 @@
-﻿package rip.lunarydess.lilith.math.easing.impl;
+package rip.lunarydess.lilith.math.easing.impl;
 
 import rip.lunarydess.lilith.math.easing.AbstractEasing;
 

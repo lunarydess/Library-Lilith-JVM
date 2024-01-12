@@ -1,4 +1,4 @@
-﻿package rip.lunarydess.lilith.math;
+package rip.lunarydess.lilith.math;
 
 public final class Statistics {
     public static float median(final float... data) {
@@ -10,7 +10,7 @@ public final class Statistics {
     public static double median(final double... data) {
         final int dataLengthHalf = data.length / 2;
         final double valueAtHalf = data[dataLengthHalf];
-        return data.length % 2 != 0 ? valueAtHalf : (valueAtHalf + data[dataLengthHalf - 1]) * 0.5F;
+        return data.length % 2 != 0 ? valueAtHalf : (valueAtHalf + data[dataLengthHalf - 1]) * 0.5D;
     }
 
     public static float variance(final float... data) {

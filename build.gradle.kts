@@ -1,5 +1,9 @@
 plugins {
+    id("idea")
+
     id("java")
+    id("java-library")
+    id("org.jetbrains.kotlin.jvm") version "2.0.0-Beta2"
 }
 
 group = "rip.lunarydess"

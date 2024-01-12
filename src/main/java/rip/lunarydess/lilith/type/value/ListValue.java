@@ -1,5 +1,6 @@
 package rip.lunarydess.lilith.type.value;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import rip.lunarydess.lilith.type.TypeCaster;
 import rip.lunarydess.lilith.utility.ArrayKit;
@@ -10,9 +11,9 @@ import java.util.Objects;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
-public class ListValue<V> implements IValue {
+public class ListValue<L extends List<V>, V> implements IValue {
     private final BiConsumer<V, V> onChange;
-    private final List<V> values;
+    private final L values;
     private final String name;
     private V value;
 
@@ -24,7 +25,7 @@ public class ListValue<V> implements IValue {
      */
     @SafeVarargs
     public ListValue(final String name, final V value,
-                     final Supplier<List<V>> factory,
+                     final Supplier<L> factory,
                      final V ... values) {
         this(name, value, null, factory, values);
     }
@@ -38,7 +39,7 @@ public class ListValue<V> implements IValue {
     @SafeVarargs
     public ListValue(final String name, final V value,
                      final @Nullable BiConsumer<V, V> onChange,
-                     final Supplier<List<V>> factory,
+                     final Supplier<L> factory,
                      final V ... values) {
         this.name = name;
         this.value = value;
@@ -59,7 +60,7 @@ public class ListValue<V> implements IValue {
     /**
      * @return a list of all values.
      */
-    public List<V> getValues() {
+    public L getValues() {
         return this.values;
     }
 
@@ -82,7 +83,7 @@ public class ListValue<V> implements IValue {
      * @return the name of the current value.
      */
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return this.name;
     }
 

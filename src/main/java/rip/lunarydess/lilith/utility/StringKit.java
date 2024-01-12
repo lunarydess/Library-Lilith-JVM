@@ -3,6 +3,7 @@ package rip.lunarydess.lilith.utility;
 import java.security.SecureRandom;
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public final class StringKit {
     private static final SecureRandom RANDOM = new SecureRandom();
@@ -55,18 +56,23 @@ public final class StringKit {
         for (final String string : strings) if (string.length() < min) min = (smallestString = string).length();
         return smallestString;
     }
-    
+
     /**
      * @param size the raw bytes
      * @return the bytes as a readable string in ISO/IEC 80000-13 standard
      */
-    public static String formatBytes(double size) {
-        int unitIndex = (int) (Math.log(size) / Math.log(1024));
-        unitIndex = unitIndex < 0 ? 0 : Math.min(unitIndex, BYTE_UNITS.length - 1);
-        size /= Math.pow(1024, unitIndex);
-        return String.format("%s %s", BYTE_FORMAT.format(size), BYTE_UNITS[unitIndex]);
+    public static String formatBytes(final double size) {
+        final int unitIndex = Math.max(0, Math.min((int) (Math.log(size) / Math.log(1024)), BYTE_UNITS.length - 1));
+        return String.format("%s %s", BYTE_FORMAT.format(size / Math.pow(1024, unitIndex)), BYTE_UNITS[unitIndex]);
     }
 
+    /**
+     * @param length  the length of our password.
+     * @param lower   if lower chars should be appended.
+     * @param upper   if upper chars should be appended.
+     * @param number  if number chars should be appended.
+     * @param special if special chars should be appended.
+     */
     public static String password(
             final int length,
             final boolean lower,
@@ -74,17 +80,19 @@ public final class StringKit {
             final boolean number,
             final boolean special
     ) {
-        String[] categories = new String[0];
-
-        if (lower) categories = ArrayKit.add(String[]::new, categories, CHARS_LOWER);
-        if (upper) categories = ArrayKit.add(String[]::new, categories, CHARS_UPPER);
-        if (number) categories = ArrayKit.add(String[]::new, categories, CHARS_NUMBER);
-        if (special) categories = ArrayKit.add(String[]::new, categories, CHARS_SPECIAL);
+        final String[] categories;
+        String[] tempCategories = new String[0];
+        if (lower) tempCategories = ArrayKit.add(String[]::new, tempCategories, CHARS_LOWER);
+        if (upper) tempCategories = ArrayKit.add(String[]::new, tempCategories, CHARS_UPPER);
+        if (number) tempCategories = ArrayKit.add(String[]::new, tempCategories, CHARS_NUMBER);
+        if (special) tempCategories = ArrayKit.add(String[]::new, tempCategories, CHARS_SPECIAL);
+        categories = tempCategories;
 
         final StringBuilder password = new StringBuilder();
         for (int i = 0; i < length; i++) {
-            final String charCategory = categories[RANDOM.nextInt(0, categories.length - 1)];
-            password.append(RANDOM.nextInt(charCategory.length()));
+            final ThreadLocalRandom threadLocalRandom = ThreadLocalRandom.current();
+            final String charCategory = categories[threadLocalRandom.nextInt(0, categories.length)];
+            password.append(charCategory.charAt(threadLocalRandom.nextInt(charCategory.length())));
         }
 
         return password.toString();

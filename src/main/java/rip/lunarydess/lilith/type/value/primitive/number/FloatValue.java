@@ -1,5 +1,6 @@
 package rip.lunarydess.lilith.type.value.primitive.number;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import rip.lunarydess.lilith.type.consumer.bi.primitive.number.Float2FloatBiConsumer;
 import rip.lunarydess.lilith.type.value.IValue;
@@ -270,7 +271,7 @@ public class FloatValue implements IValue {
      * @return the name of the current value.
      */
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return this.name;
     }
 

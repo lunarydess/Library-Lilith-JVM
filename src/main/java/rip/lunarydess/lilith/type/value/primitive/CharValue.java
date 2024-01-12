@@ -1,5 +1,6 @@
 package rip.lunarydess.lilith.type.value.primitive;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import rip.lunarydess.lilith.type.consumer.bi.primitive.Char2CharBiConsumer;
 import rip.lunarydess.lilith.type.value.IValue;
@@ -62,7 +63,7 @@ public class CharValue implements IValue {
      * @return the name of the current value.
      */
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return this.name;
     }
 
