@@ -1,6 +1,6 @@
 package rip.lunarydess.lilith.math;
 
-public final class Interpolate {
+public final class Interpolation {
     public static float lerp(final float delta, final float min, final float max) {
         return Arithmetics.clamp((1.0F - delta) * min + delta * max, min, max);
     }
