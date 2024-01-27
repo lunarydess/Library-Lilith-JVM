@@ -1296,7 +1296,7 @@ public final class ArrayKit {
     ) {
         if (values.length == 0) return "[]";
 
-        final StringBuilder returnVal = new StringBuilder(String.format("[%s", values[0]));
+        final StringBuilder returnVal = new StringBuilder(String.format("[%s", stringFunc.apply(values[0])));
         if (values.length != 1) for (int i = 1; i < values.length; i++) {
             final T appending = values[i];
             returnVal.append(String.format(", %s", appending == null ? "null" : stringFunc.apply(appending)));
@@ -1317,10 +1317,10 @@ public final class ArrayKit {
     ) {
         final L list = factory.get();
         if (arrays.length == 0) return list;
-        
+
         if (arrays.length == 1) list.addAll(List.of(arrays[0]));
         else for (final T[] target : arrays) list.addAll(List.of(target));
-        
+
         return list;
     }
 }
